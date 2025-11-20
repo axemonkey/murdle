@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["style.scss"],"names":[],"mappings":"AAAA,EACC,SACA,UAGD,QACC,gBACA,iBAGD,KACC,qBAGD,MACC","sourcesContent":["* {\n\tmargin: 0;\n\tpadding: 0;\n}\n\n#puzzle {\n\tmargin: 2em auto;\n\tmax-width: 1000px;\n}\n\n.box {\n\tborder: 2px solid red;\n}\n\n.cell {\n\tborder: 1px solid blue;\n}\n"],"file":"src/public/css/style.css"}

@@ -1,0 +1,2 @@
+(()=>{var s={categories:3,size:3,labels:["suspects","weapons","locations"],items:[["aureolin","midnight","obsidian"],["fork","pipe","candle"],["bathroom","bedroom","screening room"]]};var t=o=>{let e=document.createElement("div");e.classList.add("box"),e.id="box".concat(o.boxNumber)},n=()=>{let{labels:o,items:e}=s,i={boxNumber:1,size:s.size,label0:o[0],items0:e[0],label1:o[1],items1:e[1]},d=t(i)},l=()=>{console.log("JS loaded"),n()};window.addEventListener("load",l);})();
+//# sourceMappingURL=main-1e857f5.js.map */

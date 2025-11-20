@@ -1,0 +1,2 @@
+(()=>{var e={categories:3,size:3,labels:["suspects","weapons","locations"],items:[["aureolin","midnight","obsidian"],["fork","pipe","candle"],["bathroom","bedroom","screening room"]]};var t=o=>{},n=()=>{let{labels:o,items:s}=e,i={label0:o[0],items0:s[0],label1:o[1],items1:s[1]},c=t(i)},l=()=>{console.log("JS loaded"),n()};window.addEventListener("load",l);})();
+//# sourceMappingURL=main-fe05974.js.map */

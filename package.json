@@ -1,0 +1,46 @@
+{
+	"name": "murdle-helper",
+	"version": "0.0.1",
+	"private": "true",
+	"scripts": {
+		"start": "npx @11ty/eleventy --input=./src --serve",
+		"build": "npm-run-all prettier build:assets build:images",
+		"build:assets": "npx sn-assets-pipeline build",
+		"build:images": "node tooling/process-images.js",
+		"dev": "npm run build && npm-run-all --parallel start watch",
+		"prettier": "npx prettier . -w",
+		"watch": "npm-run-all --parallel watch:assets watch:images",
+		"watch:assets": "npx sn-assets-pipeline watch",
+		"watch:images": "onchange './src/assets/images/**/*' -- npm run build:images"
+	},
+	"author": "Clive Murray <clive+murray@clivemurray.com>",
+	"license": "UNLICENSED",
+	"type": "module",
+	"browserslist": [
+		">0.3%, last 5 versions, not dead"
+	],
+	"engines": {
+		"node": "22"
+	},
+	"devDependencies": {
+		"@11ty/eleventy": "^3.1.2",
+		"@eslint/js": "^9.35.0",
+		"@springernature/assets-pipeline": "^0.2.0",
+		"@springernature/eslint-config": "^7.0.0",
+		"@springernature/stylelint-config": "^2.0.0",
+		"eslint": "^9.35.0",
+		"eslint-plugin-import": "^2.32.0",
+		"eslint-plugin-no-use-extend-native": "^0.7.2",
+		"eslint-plugin-promise": "^7.2.1",
+		"eslint-plugin-unicorn": "^59.0.1",
+		"globals": "^16.4.0",
+		"npm-run-all2": "^7.0.1",
+		"onchange": "^7.1.0",
+		"prettier": "^3.6.2",
+		"sharp": "^0.34.3",
+		"stylelint": "^16.24.0",
+		"stylelint-config-recommended-scss": "^15.0.1",
+		"stylelint-order": "^7.0.0",
+		"svgo": "^4.0.0"
+	}
+}

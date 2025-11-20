@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../assets/js/main.js"],
+  "sourcesContent": ["import { settings } from './modules/settings.js';\n\nconst buildGrid = () => {\n\tfor (const categoryName of settings.labels) {\n\n\t}\n};\n\nconst init = () => {\n\tconsole.log(\"JS loaded\");\n};\n\nwindow.addEventListener(\"load\", init);\n"],
+  "mappings": "MAQA,IAAMA,EAAO,IAAM,CAClB,QAAQ,IAAI,WAAW,CACxB,EAEA,OAAO,iBAAiB,OAAQA,CAAI",
+  "names": ["init"]
+}

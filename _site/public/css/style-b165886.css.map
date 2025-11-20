@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["style.scss"],"names":[],"mappings":"AAAA,EACC,SACA","sourcesContent":["* {\n\tmargin: 0;\n\tpadding: 0;\n}\n"],"file":"src/public/css/style.css"}

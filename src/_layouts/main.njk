@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>{{ title | safe }}</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-type" content="text/html;charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="generator" content="{{ eleventy.generator }}">
+
+	<link rel="stylesheet" type="text/css" href="/public/css/{{assets.style.css}}">
+	<link rel="stylesheet" type="text/css" href="/public/css/{{assets.print.css}}" media="print">
+
+	<link rel="icon" href="/public/images/bill-favicon.png" type="image/x-icon">
+	<link rel="shortcut icon" href="/public/images/bill-favicon.png" type="image/x-icon">
+</head>
+
+<body>
+
+	{{ content | safe }}
+
+	<script type="module" src="/public/js/{{assets.main.js}}"></script>
+</body>
+
+</html>

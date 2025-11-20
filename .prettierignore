@@ -1,0 +1,10 @@
+node_modules
+tooling
+src/public
+src/assets/images
+src/assets/fonts
+_site
+.git
+package-lock.json
+**/vendor/**
+*.md

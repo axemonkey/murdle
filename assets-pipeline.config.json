@@ -1,0 +1,65 @@
+{
+	"tasks": [
+		{
+			"name": "Clean dist directory",
+			"type": "clean",
+			"targets": ["src/public"]
+		},
+		{
+			"name": "Copy necessary assets",
+			"type": "copyAssets",
+			"assets": [
+				{
+					"source": "src/assets/fonts",
+					"destination": "src/public/fonts"
+				}
+			],
+			"watchPatterns": ["src/assets/fonts/**/*", "src/assets/images/**/*"]
+		},
+		{
+			"name": "Lint sass files with stylelint",
+			"type": "lintSass",
+			"watchPatterns": ["src/assets/styles/**/*.scss"],
+			"exitOnError": true
+		},
+		{
+			"name": "Compile sass files with dart Sass",
+			"type": "buildCss",
+			"source": "src/assets/styles",
+			"watchPatterns": ["src/assets/styles/**/*"],
+			"destination": "src/public/css",
+			"sassOptions": {
+				"sourceMap": true
+			},
+			"autoprefixer": true,
+			"assetsManifestFile": "src/_data/assets.json"
+		},
+		{
+			"name": "Lint JS files with eslint",
+			"type": "lintJs",
+			"watchPatterns": ["src/assets/js/**/*"],
+			"exitOnError": false
+		},
+		{
+			"name": "Transpile and bundle Javascript files with esbuild",
+			"type": "buildJs",
+			"watchPatterns": ["src/assets/js/**/*"],
+			"bundles": [
+				{
+					"entryPoints": ["src/assets/js/main.js"],
+					"outfile": "src/public/js/main.js"
+				}
+			],
+			"assetsManifestFile": "src/_data/assets.json"
+		}
+	],
+	"watchOptions": {
+		"buildFirst": false,
+		"ignorePatterns": [
+			".git",
+			"node_modules/**/node_modules",
+			"*.test.js",
+			"*.spec.js"
+		]
+	}
+}
