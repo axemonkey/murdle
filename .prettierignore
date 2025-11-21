@@ -6,5 +6,5 @@ src/assets/fonts
 _site
 .git
 package-lock.json
-**/vendor/**
+**/vendor/**/*.*
 *.md
