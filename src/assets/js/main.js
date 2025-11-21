@@ -1,5 +1,14 @@
 import { settings } from './modules/settings.js';
 
+/*
+
+TODO:
+* input for params
+* URL-ise params
+* CSS for label borders
+
+*/
+
 const removeStateClass = (target) => {
 	for (let number = 0; number < 5; number++) {
 		target.classList.remove(`state${number}`);
@@ -111,6 +120,31 @@ const boxClick = (target) => {
 	}
 };
 
+const buildLabels = (config) => {
+	const theLabels = document.createElement('div');
+	theLabels.classList.add('labels', `labels-size${config.size}`);
+	theLabels.id = `labels${config.labelsDiv}`;
+
+	if (['0', '2a', '3'].includes(config.labelsDiv.toString())) {
+		theLabels.classList.add('labels-side');
+	}
+	console.log(`labels: ${config.group}`);
+
+	const labelsGroup = document.createElement('div');
+	labelsGroup.classList.add('group');
+	labelsGroup.textContent = config.group;
+	theLabels.append(labelsGroup);
+
+	for (let itemNumber = 0; itemNumber < config.size; itemNumber++) {
+		const labelsItem = document.createElement('div');
+		labelsItem.classList.add('item', `item${itemNumber}`);
+		labelsItem.textContent = config.items[itemNumber];
+		theLabels.append(labelsItem);
+	}
+
+	return theLabels;
+};
+
 const buildGrid = (config) => {
 	const theBox = document.createElement('div');
 	theBox.classList.add('box', `box-size${config.size}`);
@@ -136,29 +170,63 @@ const buildGrid = (config) => {
 	return theBox;
 };
 
-const buildPuzzle = () => {
+const buildPuzzle = (uCats, uSize) => {
 	const { labels, items } = settings;
-	const totalBoxes = (settings.categories - 2) * 3;
+	const wSize = uSize || settings.size;
+	const wCats = uCats || settings.categories;
+	const totalBoxes = (wCats - 2) * 3;
 	const puzzleHolder = document.querySelector('#puzzle');
 
 	for (let boxNumber = 1; boxNumber <= totalBoxes; boxNumber++) {
 		const config = {
 			boxNumber,
-			size: settings.size,
-			// label0: labels[0],
-			// items0: items[0],
-			// label1: labels[1],
-			// items1: items[1],
+			size: wSize,
 		};
 
 		const boxGrid = buildGrid(config);
-
 		puzzleHolder.append(boxGrid);
 	}
+
+	for (let labelsDiv = 0; labelsDiv < wCats; labelsDiv++) {
+		const config = {
+			labelsDiv,
+			size: wSize,
+			group: labels[labelsDiv],
+			items: items[labelsDiv],
+		};
+
+		const labelsBox = buildLabels(config);
+		puzzleHolder.append(labelsBox);
+
+		if (['2', '3'].includes(labelsDiv.toString())) {
+			const newConfig = config;
+			newConfig.labelsDiv = `${config.labelsDiv}a`;
+			// console.log(newConfig);
+			const labelsBox = buildLabels(newConfig);
+			puzzleHolder.append(labelsBox);
+		}
+	}
+};
+
+const deletePuzzle = () => {
+	document.querySelector('#puzzle').replaceChildren();
+};
+
+const rebuild = () => {
+	const cs = document.querySelector('#categoriesSelect').value;
+	const ss = document.querySelector('#sizeSelect').value;
+
+	deletePuzzle();
+	buildPuzzle(cs, ss);
 };
 
 const init = () => {
 	console.log('JS loaded');
+
+	document
+		.querySelector('#categoriesSelect')
+		.addEventListener('change', rebuild);
+	document.querySelector('#sizeSelect').addEventListener('change', rebuild);
 
 	buildPuzzle();
 };
