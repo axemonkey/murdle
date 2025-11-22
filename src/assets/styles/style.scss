@@ -63,11 +63,14 @@ $cellSize: 40px;
 
 	.group {
 		text-align: center;
-		padding: 5px;
+		padding: 0;
 		grid-column: 1 / span 5;
 		grid-row: 1 / span 1;
 		color: #fff;
 		background-color: #000;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.item {
@@ -75,8 +78,9 @@ $cellSize: 40px;
 		writing-mode: vertical-lr;
 		transform: rotate(180deg);
 		transform-origin: 50% 50%;
-		vertical-align: middle;
-		text-align: left;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
 	}
 }
 
@@ -100,6 +104,7 @@ $cellSize: 40px;
 		text-align: right;
 		writing-mode: initial;
 		transform: rotate(0deg);
+		justify-content: flex-end;
 	}
 }
 
