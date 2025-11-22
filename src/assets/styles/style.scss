@@ -53,12 +53,64 @@ $cellSize: 40px;
 	border-left: $thickBorder;
 }
 
+.labels {
+	display: grid;
+	grid-template-rows: $cellSize auto;
+	grid-template-columns: auto;
+	border: $thickBorder;
+	border-bottom: none;
+	border-left: none;
+
+	.group {
+		text-align: center;
+		padding: 5px;
+		grid-column: 1 / span 5;
+		grid-row: 1 / span 1;
+		color: #fff;
+		background-color: #000;
+	}
+
+	.item {
+		padding: 5px;
+		writing-mode: vertical-lr;
+		transform: rotate(180deg);
+		transform-origin: 50% 50%;
+		vertical-align: middle;
+		text-align: left;
+	}
+}
+
+.labels-side {
+	grid-template-rows: auto;
+	grid-template-columns: $cellSize auto;
+	border: $thickBorder;
+	border-right: none;
+	border-top: none;
+
+	.group {
+		writing-mode: vertical-lr;
+		transform: rotate(180deg);
+		transform-origin: 50% 50%;
+		vertical-align: middle;
+		grid-column: 1 / span 1;
+		grid-row: 1 / span 5;
+	}
+
+	.item {
+		text-align: right;
+		writing-mode: initial;
+		transform: rotate(0deg);
+	}
+}
+
 #labels0 {
 	grid-area: 2 / 1;
+	border-top: $thickBorder;
 }
 
 #labels1 {
 	grid-area: 1 / 2;
+	border-left: $thickBorder;
 }
 
 #labels2 {
@@ -75,48 +127,6 @@ $cellSize: 40px;
 
 #labels3a {
 	grid-area: 1 / 4;
-}
-
-.labels {
-	display: grid;
-	grid-template-rows: $cellSize auto;
-	grid-template-columns: auto;
-
-	.group {
-		text-align: center;
-		padding: 5px;
-		grid-column: 1 / span 5;
-		grid-row: 1 / span 1;
-	}
-
-	.item {
-		padding: 5px;
-		writing-mode: vertical-lr;
-		transform: rotate(180deg);
-		transform-origin: 50% 50%;
-		vertical-align: middle;
-		text-align: left;
-	}
-}
-
-.labels-side {
-	grid-template-rows: auto;
-	grid-template-columns: $cellSize auto;
-
-	.group {
-		writing-mode: vertical-lr;
-		transform: rotate(180deg);
-		transform-origin: 50% 50%;
-		vertical-align: middle;
-		grid-column: 1 / span 1;
-		grid-row: 1 / span 5;
-	}
-
-	.item {
-		text-align: right;
-		writing-mode: initial;
-		transform: rotate(0deg);
-	}
 }
 
 .cell {
