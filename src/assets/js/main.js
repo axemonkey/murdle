@@ -3,10 +3,13 @@ import { settings } from './modules/settings.js';
 /*
 
 TODO:
+* handle layout for 3 categories
 * input for params
 * URL-ise params
-* CSS for label borders
+* clear button
 
+TO DONE:
+* CSS for label borders
 */
 
 const removeStateClass = (target) => {
@@ -160,6 +163,7 @@ const buildGrid = (config) => {
 			cell.dataset.rc = `${rowNumber}-${columnNumber}`;
 			cell.style.gridRow = rowNumber;
 			cell.style.gridColumn = columnNumber;
+			cell.textContent = ' ';
 			theBox.append(cell);
 			cell.addEventListener('click', (event) => {
 				boxClick(event.target);
@@ -176,6 +180,8 @@ const buildPuzzle = (uCats, uSize) => {
 	const wCats = uCats || settings.categories;
 	const totalBoxes = (wCats - 2) * 3;
 	const puzzleHolder = document.querySelector('#puzzle');
+	puzzleHolder.dataset.cats = wCats;
+	puzzleHolder.dataset.size = wSize;
 
 	for (let boxNumber = 1; boxNumber <= totalBoxes; boxNumber++) {
 		const config = {
