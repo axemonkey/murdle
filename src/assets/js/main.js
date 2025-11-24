@@ -3,13 +3,13 @@ import { settings } from './modules/settings.js';
 /*
 
 TODO:
-* handle layout for 3 categories
 * input for params
 * URL-ise params
 * clear button
 
 TO DONE:
 * CSS for label borders
+* handle layout for 3 categories
 */
 
 const removeStateClass = (target) => {

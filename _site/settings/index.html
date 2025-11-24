@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Murdle Helper</title>
+	<title>Murdle Helper ~*~ Settings</title>
 	<meta charset="utf-8">
 	<meta http-equiv="Content-type" content="text/html;charset=utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
@@ -20,27 +20,47 @@
 	
 <main>
 
-	<h1>HEADING 1</h1>
+	<h1>Settings</h1>
 
-	<div id="puzzle">
+	<fieldset id="categoriesFieldset">
+		<legend>Categories</legend>
 
-	</div>
-
-	<div id="controls">
-		<select name="categoriesSelect" id="categoriesSelect">
+		<label for="numCategories">Number of categories</label>
+		<select name="numCategories" id="numCategories">
 			<option value="3">3</option>
 			<option value="4" selected>4</option>
 		</select>
 
-		<select name="sizeSelect" id="sizeSelect">
+		<label for="numItems">Number of items</label>
+		<select name="numItems" id="numItems">
 			<option value="3">3</option>
 			<option value="4">4</option>
 			<option value="5" selected>5</option>
 			<option value="6">6</option>
 		</select>
 
-		<a href="/settings">Settings</a>
-	</div>
+		<p>Category labels</p>
+		
+		<label for="category-1">Category 1</label>
+		<input type="text" name="category-1" id="category-1">
+		
+		<label for="category-2">Category 2</label>
+		<input type="text" name="category-2" id="category-2">
+		
+		<label for="category-3">Category 3</label>
+		<input type="text" name="category-3" id="category-3">
+		
+		<label for="category-4">Category 4</label>
+		<input type="text" name="category-4" id="category-4">
+		
+	</fieldset>
+
+
+
+
+
+
+		
 
 </main>
 

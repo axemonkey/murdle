@@ -171,6 +171,10 @@ $cellSize: 40px;
 	grid-area: 1 / 4;
 }
 
+[data-cats="3"] #labels2a {
+	grid-area: 3 / 1;
+}
+
 .cell {
 	font-size: 150%;
 	border-left: $thinBorder;

@@ -1,0 +1,41 @@
+---
+layout: main.njk
+title: Murdle Helper ~*~ Settings
+---
+
+<main>
+
+	<h1>Settings</h1>
+
+	<fieldset id="categoriesFieldset">
+		<legend>Categories</legend>
+
+		<label for="numCategories">Number of categories</label>
+		<select name="numCategories" id="numCategories">
+			<option value="3">3</option>
+			<option value="4" selected>4</option>
+		</select>
+
+		<label for="numItems">Number of items</label>
+		<select name="numItems" id="numItems">
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5" selected>5</option>
+			<option value="6">6</option>
+		</select>
+
+		<p>Category labels</p>
+		{% for i in range(1, 5) %}
+		<label for="category-{{i}}">Category {{i}}</label>
+		<input type="text" name="category-{{i}}" id="category-{{i}}">
+		{% endfor %}
+	</fieldset>
+
+
+
+
+
+
+		{# <a href="/settings">Settings</a> #}
+
+</main>
