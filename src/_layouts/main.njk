@@ -11,15 +11,15 @@
 	<link rel="stylesheet" type="text/css" href="/public/css/{{assets.style.css}}">
 	<link rel="stylesheet" type="text/css" href="/public/css/{{assets.print.css}}" media="print">
 
-	<link rel="icon" href="/public/images/bill-favicon.png" type="image/x-icon">
-	<link rel="shortcut icon" href="/public/images/bill-favicon.png" type="image/x-icon">
+	{# <link rel="icon" href="/public/images/bill-favicon.png" type="image/x-icon">
+	<link rel="shortcut icon" href="/public/images/bill-favicon.png" type="image/x-icon"> #}
 </head>
 
-<body>
+<body class="{{ pagename }}">
 
 	{{ content | safe }}
 
-	<script type="module" src="/public/js/{{assets.main.js}}"></script>
+	<script type="module" src="/public/js/{{assets[pagename].js}}"></script>
 </body>
 
 </html>

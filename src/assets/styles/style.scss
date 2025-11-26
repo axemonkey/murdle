@@ -1,6 +1,10 @@
+@use "partials/fonts";
+
 $thickBorder: 2px solid black;
 $thinBorder: 1px solid grey;
 $cellSize: 40px;
+$hyperlegible: "Atkinson-Hyperlegible", sans-serif;
+$comfortaa: "Comfortaa", sans-serif;
 
 * {
 	margin: 0;
@@ -71,6 +75,8 @@ $cellSize: 40px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		text-transform: uppercase;
+		font-family: $hyperlegible;
 	}
 
 	.item {
@@ -81,6 +87,7 @@ $cellSize: 40px;
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
+		font-family: $hyperlegible;
 	}
 }
 
@@ -220,7 +227,46 @@ $cellSize: 40px;
 	justify-content: center;
 }
 
+// select {
+// 	font-size: 200%;
+// 	min-width: 200px;
+// }
+
+fieldset {
+	max-width: 1000px;
+	margin: 0 auto 1em;
+	padding: 10px;
+	display: grid;
+	gap: 10px;
+	grid-template-columns: 1fr 3fr;
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+legend,
+p,
+section {
+	grid-column: 1 / span 2;
+}
+
+section {
+	display: grid;
+	gap: 10px;
+	grid-template-columns: 1fr 3fr;
+}
+
+label {
+	grid-column: 1 / span 1;
+	text-align: right;
+}
+
+input[type="text"],
 select {
-	font-size: 200%;
-	min-width: 200px;
+	grid-column: 2 / span 1;
+}
+
+.hide {
+	display: none;
 }

@@ -1,20 +1,24 @@
-const settings = {
+const defaults = {
 	categories: 4, // 3 or 4 only
 	size: 5, // 3, 4 or 5... 6?
 	labels: ['Students', 'Subjects', 'Teachers', 'Grades'],
 	items: [
-		['Bruce', 'Adrian', 'Dave', 'Steve', 'Nicko', 'Janick'],
-		['Maths', 'Chemistry', 'French', 'History', 'Music', 'Business Studies'],
+		['Adrian', 'Bruce', 'Dave', 'Nicko', 'Steve'],
+		['Chemistry', 'French', 'History', 'Maths', 'Music'],
 		[
 			'Mr Bettencourt',
-			'Mr Hammett',
+			'Mrs Hammett',
 			'Dr Malmsteen',
-			'Mrs Mustaine',
+			'Mr Mustaine',
 			'Miss Wylde',
-			'Mrs Petrucci',
 		],
-		['A', 'B', 'C', 'D', 'E', 'F'],
+		['A', 'B', 'C', 'D', 'E'],
 	],
 };
 
-export { settings };
+const constants = {
+	MAX_CATS: 4,
+	MAX_SIZE: 6,
+};
+
+export { defaults, constants };

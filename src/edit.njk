@@ -1,0 +1,56 @@
+---
+layout: main.njk
+title: Murdle Helper ~*~ Settings
+pagename: edit
+---
+
+<main>
+
+	<h1>Settings</h1>
+
+	<fieldset id="puzzleFieldset">
+		<legend>Puzzle size</legend>
+
+		<label for="numCategories">Number of categories</label>
+		<select name="numCategories" id="numCategories" data-field="categories">
+			<option value="3">3</option>
+			<option value="4" selected>4</option>
+		</select>
+
+		<label for="numItems">Number of items</label>
+		<select name="numItems" id="numItems" data-field="size">
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6" selected>6</option>
+		</select>
+	</fieldset>
+
+	<fieldset id="categoriesFieldset">
+		<legend>Categories</legend>
+
+		{% for i in range(0, 4) %}
+			<label for="category-{{i}}">Category {{i + 1}}</label>
+			<input type="text" name="category-{{i}}" id="category-{{i}}">
+		{% endfor %}
+
+	</fieldset>
+
+	<fieldset id="itemsFieldset">
+		<legend>Items</legend>
+
+		{% for i in range(0, 4) %}
+			<section data-items="items-{{i}}">
+				<p>Category {{i + 1}}</p>
+
+				{% for j in range(0, 6) %}
+					<label for="category-{{i}}-item-{{j}}">Item {{j + 1}}</label>
+					<input type="text" name="category-{{i}}-item={{j}}" id="category-{{i}}-item-{{j}}">
+				{% endfor %}
+			</section>
+		{% endfor %}
+	</fieldset>
+
+	<a id="saveLink" href="/">Back</a>
+
+</main>

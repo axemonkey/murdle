@@ -3,9 +3,15 @@
     "css": "print-a25396b.css"
   },
   "style": {
-    "css": "style-29acb7f.css"
+    "css": "style-a6fd7ff.css"
   },
   "main": {
-    "js": "main-4f38534.js"
+    "js": "main-ab82896.js"
+  },
+  "settings": {
+    "js": "settings-9696cdc.js"
+  },
+  "edit": {
+    "js": "edit-ce6d462.js"
   }
 }

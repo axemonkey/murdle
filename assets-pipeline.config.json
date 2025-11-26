@@ -48,6 +48,10 @@
 				{
 					"entryPoints": ["src/assets/js/main.js"],
 					"outfile": "src/public/js/main.js"
+				},
+				{
+					"entryPoints": ["src/assets/js/edit.js"],
+					"outfile": "src/public/js/edit.js"
 				}
 			],
 			"assetsManifestFile": "src/_data/assets.json"

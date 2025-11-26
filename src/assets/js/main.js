@@ -1,16 +1,24 @@
-import { settings } from './modules/settings.js';
+import { defaults } from './modules/settings.js';
+import { getDataObjFromURL } from './modules/tools.js';
 
 /*
-
 TODO:
 * input for params
 * URL-ise params
+* write story and clues for example
+* save puzzle state - serialised array in params with save button
+* "revert to saved" button
 * clear button
+* print stylesheet
 
 TO DONE:
 * CSS for label borders
 * handle layout for 3 categories
 */
+
+// const currSettings = structuredClone(defaults);
+
+let currSettings;
 
 const removeStateClass = (target) => {
 	for (let number = 0; number < 5; number++) {
@@ -175,9 +183,9 @@ const buildGrid = (config) => {
 };
 
 const buildPuzzle = (uCats, uSize) => {
-	const { labels, items } = settings;
-	const wSize = uSize || settings.size;
-	const wCats = uCats || settings.categories;
+	const { labels, items } = currSettings;
+	const wSize = uSize || currSettings.size;
+	const wCats = uCats || currSettings.categories;
 	const totalBoxes = (wCats - 2) * 3;
 	const puzzleHolder = document.querySelector('#puzzle');
 	puzzleHolder.dataset.cats = wCats;
@@ -226,15 +234,23 @@ const rebuild = () => {
 	buildPuzzle(cs, ss);
 };
 
+const writeSettingsLink = () => {
+	const link = document.querySelector('#settingsLink');
+	const dataParam = encodeURIComponent(JSON.stringify(currSettings));
+	const currentHref = link.getAttribute('href');
+
+	link.setAttribute('href', `${currentHref}/?data=${dataParam}`);
+};
+
 const init = () => {
 	console.log('JS loaded');
 
-	document
-		.querySelector('#categoriesSelect')
-		.addEventListener('change', rebuild);
-	document.querySelector('#sizeSelect').addEventListener('change', rebuild);
+	currSettings = getDataObjFromURL();
+
+	console.log(currSettings);
 
 	buildPuzzle();
+	writeSettingsLink();
 };
 
 window.addEventListener('load', init);
