@@ -1,15 +1,33 @@
 @use "partials/fonts";
 
-$thickBorder: 2px solid black;
-$thinBorder: 1px solid grey;
 $cellSize: 40px;
 $hyperlegible: "Atkinson-Hyperlegible", sans-serif;
 $comfortaa: "Comfortaa", sans-serif;
+$bgc: #fff9f9;
+$fgc: #400;
+$white: white;
+$thickBorder: 2px solid $fgc;
+$thinBorder: 1px solid rgb(from $fgc r g b / 0.25);
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-size: 1rem;
+}
+
+body {
+	background-color: $bgc;
+	color: $fgc;
+	font-family: $hyperlegible;
+	font-size: 1rem;
+}
+
+h1 {
+	font-family: $comfortaa;
+	margin: 1em auto;
+	text-align: center;
+	font-size: 2em;
 }
 
 #puzzle {
@@ -25,6 +43,7 @@ $comfortaa: "Comfortaa", sans-serif;
 .box {
 	border-right: $thickBorder;
 	border-bottom: $thickBorder;
+	background-color: $white;
 	display: grid;
 }
 
@@ -70,8 +89,8 @@ $comfortaa: "Comfortaa", sans-serif;
 		padding: 0;
 		grid-column: 1 / span 6;
 		grid-row: 1 / span 1;
-		color: #fff;
-		background-color: #000;
+		color: $white;
+		background-color: $fgc;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -233,19 +252,31 @@ $comfortaa: "Comfortaa", sans-serif;
 // }
 
 fieldset {
-	max-width: 1000px;
+	max-width: 800px;
 	margin: 0 auto 1em;
-	padding: 10px;
+	padding: 20px 40px;
 	display: grid;
 	gap: 10px;
 	grid-template-columns: 1fr 3fr;
+	border: none;
+	border-top: $thickBorder;
+	border-left: $thickBorder;
+	border-top-left-radius: 20px;
+	align-items: baseline;
 
 	&:last-of-type {
 		margin-bottom: 0;
 	}
 }
 
-legend,
+legend {
+	padding: 4px 10px;
+	color: $bgc;
+	background-color: $fgc;
+	border: $thickBorder;
+	border-radius: 1000px;
+}
+
 p,
 section {
 	grid-column: 1 / span 2;
@@ -260,11 +291,19 @@ section {
 label {
 	grid-column: 1 / span 1;
 	text-align: right;
+	align-self: center;
+	font-size: 1rem;
 }
 
 input[type="text"],
 select {
 	grid-column: 2 / span 1;
+	border: $thinBorder;
+	color: $fgc;
+	background-color: $white;
+	padding: 5px;
+	border-radius: 5px;
+	font-size: 1rem;
 }
 
 .hide {

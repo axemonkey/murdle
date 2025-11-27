@@ -10,7 +10,7 @@ const defaults = {
 			'Mrs Hammett',
 			'Dr Malmsteen',
 			'Mr Mustaine',
-			'Miss Wylde',
+			'Miss Petrucci',
 		],
 		['A', 'B', 'C', 'D', 'E'],
 	],

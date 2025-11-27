@@ -78,9 +78,19 @@ const parseForm = () => {
 
 	// const labelInputs = document.querySelectorAll(`[id^="category"]`);
 	const labelInputs = document.querySelectorAll('#categoriesFieldset input');
-	labelInputs.forEach((labelInput) => {
-		data.labels.push(labelInput.value);
-	});
+	// labelInputs.forEach((labelInput) => {
+	// 	data.labels.push(labelInput.value);
+
+	// });
+
+	for (let labelIndex = 0; labelIndex < labelInputs.length; labelIndex++) {
+		const wLabel = labelInputs[labelIndex];
+		data.labels.push(wLabel.value);
+		const itemsLabel = document.querySelector(
+			`[data-items="items-${labelIndex}"] > p`,
+		);
+		itemsLabel.textContent = wLabel.value;
+	}
 
 	for (let wCat = 0; wCat < data.categories; wCat++) {
 		const itemValues = [];
@@ -96,10 +106,8 @@ const parseForm = () => {
 	console.log(data);
 
 	const saveLink = document.querySelector('#saveLink');
-	// const dataParam = encodeURIComponent(JSON.stringify(data));
-	const dataParam = JSON.stringify(data);
-	// const currentHref = saveLink.getAttribute('href');
-	// console.log(`original link href: ${currentHref}`);
+	// const dataParam = JSON.stringify(data);
+	const dataParam = encodeURIComponent(JSON.stringify(data));
 	console.log(dataParam);
 	saveLink.setAttribute('href', `/?data=${dataParam}`);
 };
