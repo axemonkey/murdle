@@ -1,4 +1,6 @@
 @use "partials/fonts";
+@use "partials/nav";
+@use "partials/buttons";
 
 $cellSize: 40px;
 $hyperlegible: "Atkinson-Hyperlegible", sans-serif;
@@ -32,8 +34,6 @@ h1 {
 
 #puzzle {
 	margin: 2em auto;
-	// max-width: 1000px;
-	// border: 2px solid green;
 	padding: 10px;
 	display: grid;
 	gap: 0;
@@ -308,4 +308,8 @@ select {
 
 .hide {
 	display: none;
+}
+
+ul {
+	padding-left: 30px;
 }

@@ -1,22 +1,21 @@
-import { defaults } from './modules/settings.js';
 import { getDataObjFromURL } from './modules/tools.js';
 
 /*
 TODO:
-* input for params
-* URL-ise params
 * write story and clues for example
+* load example button
 * save puzzle state - serialised array in params with save button
 * "revert to saved" button
-* clear button
+* polish up visuals / UI
 * print stylesheet
 
 TO DONE:
 * CSS for label borders
 * handle layout for 3 categories
+* input for params
+* URL-ise params
+* clear button
 */
-
-// const currSettings = structuredClone(defaults);
 
 let currSettings;
 
@@ -226,14 +225,6 @@ const deletePuzzle = () => {
 	document.querySelector('#puzzle').replaceChildren();
 };
 
-const rebuild = () => {
-	const cs = document.querySelector('#categoriesSelect').value;
-	const ss = document.querySelector('#sizeSelect').value;
-
-	deletePuzzle();
-	buildPuzzle(cs, ss);
-};
-
 const writeSettingsLink = () => {
 	const link = document.querySelector('#settingsLink');
 	const dataParam = encodeURIComponent(JSON.stringify(currSettings));
@@ -242,12 +233,25 @@ const writeSettingsLink = () => {
 	link.setAttribute('href', `${currentHref}/?data=${dataParam}`);
 };
 
+const clearPuzzle = () => {
+	if (confirm('Are you sure you want to clear the puzzle?')) {
+		deletePuzzle();
+		buildPuzzle(currSettings.categories, currSettings.size);
+	}
+};
+
 const init = () => {
 	console.log('JS loaded');
 
 	currSettings = getDataObjFromURL();
 
 	console.log(currSettings);
+
+	document.querySelector('#menu-trigger').addEventListener('click', (event) => {
+		event.target.closest('nav').classList.toggle('open');
+	});
+
+	document.querySelector('#clear').addEventListener('click', clearPuzzle);
 
 	buildPuzzle();
 	writeSettingsLink();
