@@ -1,0 +1,10 @@
+:root {
+	--cell-size: 40px;
+	--hyperlegible: "Atkinson-Hyperlegible", sans-serif;
+	--comfortaa: "Comfortaa", sans-serif;
+	--bgc: #fff9f9;
+	--fgc: #400;
+	--white: white;
+	--thick-border: 2px solid var(--fgc);
+	--thin-border: 1px solid rgb(from var(--fgc) r g b / 0.25);
+}

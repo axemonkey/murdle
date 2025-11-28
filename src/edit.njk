@@ -41,7 +41,7 @@ pagename: edit
 
 		{% for i in range(0, 4) %}
 			<section data-items="items-{{i}}">
-				<p>Category {{i + 1}}</p>
+				<p class="category-heading">Category {{i + 1}}</p>
 
 				{% for j in range(0, 6) %}
 					<label for="category-{{i}}-item-{{j}}">Item {{j + 1}}</label>
@@ -52,5 +52,9 @@ pagename: edit
 	</fieldset>
 
 	<a id="saveLink" href="/">Back</a>
+
+	<div id="controls">
+		<button id="save">Save and return</button>
+	</div>
 
 </main>

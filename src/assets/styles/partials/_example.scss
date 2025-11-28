@@ -1,0 +1,16 @@
+#exampleText {
+	margin: 2em auto 6em;
+	max-width: 800px;
+
+	border: var(--thin-border);
+	border-radius: 20px;
+	padding: 2em;
+	background-color: var(--white);
+
+	li {
+		margin-bottom: 0.5rem;
+	}
+	li:last-child {
+		margin-bottom: 0;
+	}
+}

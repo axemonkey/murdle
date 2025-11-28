@@ -251,7 +251,7 @@ const init = () => {
 		event.target.closest('nav').classList.toggle('open');
 	});
 
-	document.querySelector('#clear').addEventListener('click', clearPuzzle);
+	document.querySelector('#clearButton').addEventListener('click', clearPuzzle);
 
 	buildPuzzle();
 	writeSettingsLink();
