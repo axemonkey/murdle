@@ -2,14 +2,18 @@ import { getDataObjFromURL } from './modules/tools.js';
 
 /*
 TODO:
-* write story and clues for example
+* highlight rows and columns on hover
 * load example button
+* start empty? popup choice to load example or enter options
 * save puzzle state - serialised array in params with save button
 * "revert to saved" button
+* conclusions grid
 * polish up visuals / UI
 * print stylesheet
 
 TO DONE:
+* click to strike out clues in example
+* write story and clues for example
 * CSS for label borders
 * handle layout for 3 categories
 * input for params
@@ -249,6 +253,13 @@ const init = () => {
 
 	document.querySelector('#menu-trigger').addEventListener('click', (event) => {
 		event.target.closest('nav').classList.toggle('open');
+	});
+
+	const clues = document.querySelectorAll('#exampleText li');
+	clues.forEach((clue) => {
+		clue.addEventListener('click', () => {
+			clue.classList.toggle('struck');
+		});
 	});
 
 	document.querySelector('#clearButton').addEventListener('click', clearPuzzle);
