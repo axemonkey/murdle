@@ -5,6 +5,7 @@ TODO:
 * highlight rows and columns on hover
 * load example button
 * start empty? popup choice to load example or enter options
+* another example
 * save puzzle state - serialised array in params with save button
 * "revert to saved" button
 * conclusions grid
