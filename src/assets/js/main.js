@@ -6,6 +6,8 @@ TODO:
 * load example button
 * start empty? popup choice to load example or enter options
 * another example
+* loadable solutions for examples
+  * maybe some kind of step-through with annotations???
 * save puzzle state - serialised array in params with save button
 * "revert to saved" button
 * conclusions grid
