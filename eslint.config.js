@@ -1,4 +1,5 @@
-import { coreConfig, browserConfig } from '@springernature/eslint-config';
+import { coreConfig } from './tooling/lint-configs/core.js';
+import { browserConfig } from './tooling/lint-configs/browser.js';
 import { defineConfig } from 'eslint/config';
 import globals from 'globals';
 
@@ -10,7 +11,7 @@ export default defineConfig([
 			globals: { ...globals.browser },
 		},
 		rules: {
-			// custom rules
+			'comma-dangle': ['warn', 'always'],
 		},
 	},
 	{
