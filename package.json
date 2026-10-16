@@ -34,11 +34,11 @@
 		"globals": "^17.13.0",
 		"npm-run-all2": "^9.0.3",
 		"onchange": "^7.1.0",
-		"prettier": "^3.9.9",
+		"prettier": "^3.9.10",
 		"sharp": "^0.35.5",
 		"stylelint": "^17.16.0",
 		"stylelint-config-recommended-scss": "^17.0.1",
-		"stylelint-order": "^8.1.1",
+		"stylelint-order": "^8.1.2",
 		"svgo": "^4.0.1"
 	},
 	"allowScripts": {
